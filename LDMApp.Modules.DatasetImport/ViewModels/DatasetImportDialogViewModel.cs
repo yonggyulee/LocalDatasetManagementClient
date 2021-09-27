@@ -23,9 +23,9 @@ namespace LDMApp.Modules.DatasetImport.ViewModels
     {
         private string _title = AppSettings.DatasetImportTitle;
         private readonly IDialogService dialogService;
-        private readonly DatasetController datasetController;
-        private readonly SamplesController samplesController;
-        private readonly ImagesController imagesController;
+        private readonly DatasetApiHandler datasetController;
+        private readonly SamplesApiHandler samplesController;
+        private readonly ImagesApiHandler imagesController;
 
         public event Action<IDialogResult> RequestClose;
 
@@ -92,9 +92,9 @@ namespace LDMApp.Modules.DatasetImport.ViewModels
         public DatasetImportDialogViewModel(IDialogService dialogService, IDatasetApi datasetApi, ISamplesApi samplesApi, IImagesApi imagesApi)
         {
             this.dialogService = dialogService;
-            datasetController = new DatasetController(datasetApi);
-            samplesController = new SamplesController(samplesApi);
-            imagesController = new ImagesController(imagesApi);
+            datasetController = new DatasetApiHandler(datasetApi);
+            samplesController = new SamplesApiHandler(samplesApi);
+            imagesController = new ImagesApiHandler(imagesApi);
         }
 
         public bool CanCloseDialog()

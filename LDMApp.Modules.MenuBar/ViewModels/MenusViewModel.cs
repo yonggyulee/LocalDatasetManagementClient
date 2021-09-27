@@ -14,7 +14,7 @@ namespace LDMApp.Modules.MenuBar.ViewModels
 {
     public class MenusViewModel : BindableBase
     {
-        private DatasetController datasetController;
+        private DatasetApiHandler datasetController;
         private readonly IDialogService dialogService;
         private readonly IEventAggregator eventAggregator;
         private string _currentDataset;
@@ -29,7 +29,7 @@ namespace LDMApp.Modules.MenuBar.ViewModels
 
         public MenusViewModel(IDatasetApi datasetApi, IDialogService dialogService, IEventAggregator eventAggregator)
         {
-            datasetController = new DatasetController(datasetApi);
+            datasetController = new DatasetApiHandler(datasetApi);
             this.dialogService = dialogService;
             this.eventAggregator = eventAggregator;
             ShowDatasetSelectDialogCMD = new DelegateCommand(ShowDatasetSelectDialog);

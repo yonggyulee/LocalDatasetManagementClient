@@ -14,7 +14,7 @@ namespace LDMApp.Modules.Samples.ViewModels
 {
     public class SamplesDataViewModel : BindableBase
     {
-        private SamplesController samplesController;
+        private SamplesApiHandler samplesController;
 
         private ObservableCollection<Sample> _sampleItems = new ObservableCollection<Sample>();
         public ObservableCollection<Sample> SampleItems 
@@ -37,7 +37,7 @@ namespace LDMApp.Modules.Samples.ViewModels
 
         public SamplesDataViewModel(ISamplesApi samplesApi, IEventAggregator eventAggregator)
         {
-            samplesController = new SamplesController(samplesApi);
+            samplesController = new SamplesApiHandler(samplesApi);
             this.eventAggregator = eventAggregator;
             eventAggregator.GetEvent<DatasetSelectedEvent>().Subscribe(setData, ThreadOption.UIThread);
             //getMsg();

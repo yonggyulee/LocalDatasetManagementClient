@@ -18,7 +18,7 @@ namespace LDMApp.Module.Images.ViewModels
 {
     public class ImagesDataViewModel : BindableBase
     {
-        private ImagesController imagesController;
+        private ImagesApiHandler imagesController;
 
         private ObservableCollection<Image> _imageItems = new ObservableCollection<Image>();
         
@@ -39,7 +39,7 @@ namespace LDMApp.Module.Images.ViewModels
 
         public ImagesDataViewModel(IImagesApi imagesApi, IEventAggregator eventAggregator)
         {
-            imagesController = new ImagesController(imagesApi);
+            imagesController = new ImagesApiHandler(imagesApi);
             this.eventAggregator = eventAggregator;
             eventAggregator.GetEvent<SampleSelectedEvent>().Subscribe(OnSampleSelected, ThreadOption.UIThread);
         }
@@ -54,7 +54,8 @@ namespace LDMApp.Module.Images.ViewModels
                 CurrentPositionImageItem = ImageItems.First();
                 foreach(Image i in ImageItems)
                 {
-                    using (MemoryStream stream = await imagesController.GetImage(currentDataset, i.ImageID))
+                    var stream = await imagesController.GetImage(currentDataset, i.ImageID);
+                    using (stream)
                     {
                         if(stream.Length > 0)
                         {
@@ -64,9 +65,13 @@ namespace LDMApp.Module.Images.ViewModels
                             bitimg.StreamSource = stream;
                             bitimg.EndInit();
                             bitimg.Freeze();
-                            ImageItems.Where(img => img.ImageID == i.ImageID)
-                                      .First()
-                                      .BitmapImage = bitimg;
+                            var item = ImageItems.Where(img => img.ImageID == i.ImageID)
+                                      .FirstOrDefault()
+                                      ;
+                            if (item != null)
+                            {
+                                item.BitmapImage = bitimg;
+                            }
                         }
                     }
                 }
