@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>LDMApp</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DryIoc.Microsoft.DependencyInjection.Extension" Version="1.0.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+    <PackageReference Include="Refit" Version="6.0.94" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="6.0.94" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LDMApp.Core\LDMApp.Core.csproj" />
+    <ProjectReference Include="..\LDMApp.Module.Images\LDMApp.Modules.Images.csproj" />
+    <ProjectReference Include="..\LDMApp.Modules.DatasetImport\LDMApp.Modules.DatasetImport.csproj" />
+    <ProjectReference Include="..\LDMApp.Modules.MenuBar\LDMApp.Modules.MenuBar.csproj" />
+    <ProjectReference Include="..\LDMApp.Modules.Samples\LDMApp.Modules.Samples.csproj" />
+    <ProjectReference Include="..\LDMApp.Services.Interfaces\LDMApp.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\LDMApp.Services\LDMApp.Services.csproj" />
+  </ItemGroup>
+</Project>

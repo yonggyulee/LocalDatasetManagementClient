@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="LDMApp.Modules.Samples.Views.SamplesData"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <ListView BorderThickness="1" Width="Auto"
+              ItemsSource="{Binding Path=SampleItems}"
+              SelectedItem="{Binding Path=CurrentPositionSampleItem, Mode=TwoWay}" AlternationCount="2"
+              IsSynchronizedWithCurrentItem="True">
+        <ListView.View>
+            <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="Current positions">
+                <GridViewColumn Header="SampleID" 
+                                DisplayMemberBinding="{Binding Path=SampleID}"/>
+                <GridViewColumn Header="DatasetID" 
+                                DisplayMemberBinding="{Binding Path=DatasetID}"/>
+                <GridViewColumn Header="Type" 
+                                DisplayMemberBinding="{Binding Path=SampleType}"/>
+                <GridViewColumn Header="Metadata" 
+                                DisplayMemberBinding="{Binding Path=Metadata}"
+                                Width="auto"/>
+                <GridViewColumn Header="ImageCount" 
+                                DisplayMemberBinding="{Binding Path=ImageCount}"/>
+            </GridView>
+        </ListView.View>
+    </ListView>
+    <!--<StackPanel Orientation="Vertical">
+        <TextBlock Text="Test"/>
+        <TextBlock Text="{Binding Message}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" /> 
+    </StackPanel>-->
+</UserControl>

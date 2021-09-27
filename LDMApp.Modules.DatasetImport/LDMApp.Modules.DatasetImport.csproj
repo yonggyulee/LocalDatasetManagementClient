@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>LDMApp.Modules.DatasetImport</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LDMApp.Controllers\LDMApp.Controllers.csproj" />
+    <ProjectReference Include="..\LDMApp.Core\LDMApp.Core.csproj" />
+    <ProjectReference Include="..\LDMApp.Services.Interfaces\LDMApp.Services.Interfaces.csproj" />
+  </ItemGroup>
+</Project>

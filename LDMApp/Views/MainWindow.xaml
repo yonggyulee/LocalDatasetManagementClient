@@ -1,0 +1,53 @@
+﻿<Window x:Class="LDMApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:core="clr-namespace:LDMApp.Core;assembly=LDMApp.Core"
+        Title="{Binding Title}" WindowState="Maximized" Background="LightSteelBlue" >
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Grid Grid.Row="1" Margin="20,0,20,20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85"/>
+                <RowDefinition Height="*" MinHeight="400"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="500" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--logo-->
+            <StackPanel x:Name="Logo" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right">
+                <TextBlock Text="LocalDatasetManagementAPI" TextWrapping="NoWrap" Foreground="Orange" FontSize="50" Opacity="0.65" Height="Auto" TextAlignment="Right" FontWeight="Bold" Width="Auto"/>
+            </StackPanel>
+            
+            
+            <ItemsControl Grid.Row="0" Grid.Column="0"
+                      x:Name="Menubar"
+                      prism:RegionManager.RegionName="{x:Static core:RegionNames.MenubarRegion}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Grid x:Name="ContentGrid" Grid.Row="1" Margin="0,0,2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Background="White">
+                    <TextBlock Text="Samples" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static core:RegionNames.SamplesRegion}" />
+            </Grid>
+            <Grid x:Name="ImagesGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Width="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Background="White" >
+                    <TextBlock Text="Images" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ImagesRegion}"/>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

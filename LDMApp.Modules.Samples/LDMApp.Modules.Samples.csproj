@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>LDMApp.Modules.Samples</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+    <PackageReference Include="Refit" Version="6.0.94" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LDMApp.Controllers\LDMApp.Controllers.csproj" />
+    <ProjectReference Include="..\LDMApp.Core\LDMApp.Core.csproj" />
+    <ProjectReference Include="..\LDMApp.Modules.MenuBar\LDMApp.Modules.MenuBar.csproj" />
+    <ProjectReference Include="..\LDMApp.Services.Interfaces\LDMApp.Services.Interfaces.csproj" />
+  </ItemGroup>
+</Project>
