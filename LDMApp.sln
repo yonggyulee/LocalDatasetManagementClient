@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDMApp.Modules.Images", "LD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDMApp.Modules.MenuBar", "LDMApp.Modules.MenuBar\LDMApp.Modules.MenuBar.csproj", "{CAC661C7-6056-4228-A63D-C77F36A9E4A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDMApp.Controllers", "LDMApp.Controllers\LDMApp.Controllers.csproj", "{D260A380-CE38-4037-82BE-5EA69A925E95}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDMApp.Modules.DatasetImport", "LDMApp.Modules.DatasetImport\LDMApp.Modules.DatasetImport.csproj", "{14873D41-F6F8-429A-860D-60A2ADDC75B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LDMApp.ApiHandler", "LDMApp.ApiHandler\LDMApp.ApiHandler.csproj", "{89FBA268-9DDB-4241-924E-B339F9C63A5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +59,14 @@ Global
 		{CAC661C7-6056-4228-A63D-C77F36A9E4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAC661C7-6056-4228-A63D-C77F36A9E4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAC661C7-6056-4228-A63D-C77F36A9E4A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D260A380-CE38-4037-82BE-5EA69A925E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D260A380-CE38-4037-82BE-5EA69A925E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D260A380-CE38-4037-82BE-5EA69A925E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D260A380-CE38-4037-82BE-5EA69A925E95}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14873D41-F6F8-429A-860D-60A2ADDC75B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14873D41-F6F8-429A-860D-60A2ADDC75B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14873D41-F6F8-429A-860D-60A2ADDC75B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14873D41-F6F8-429A-860D-60A2ADDC75B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FBA268-9DDB-4241-924E-B339F9C63A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FBA268-9DDB-4241-924E-B339F9C63A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FBA268-9DDB-4241-924E-B339F9C63A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FBA268-9DDB-4241-924E-B339F9C63A5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

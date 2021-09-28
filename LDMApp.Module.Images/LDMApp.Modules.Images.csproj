@@ -9,7 +9,7 @@
     <PackageReference Include="Refit" Version="6.0.94" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LDMApp.Controllers\LDMApp.Controllers.csproj" />
+    <ProjectReference Include="..\LDMApp.Controllers\LDMApp.ApiHandler.csproj" />
     <ProjectReference Include="..\LDMApp.Core\LDMApp.Core.csproj" />
   </ItemGroup>
 </Project>

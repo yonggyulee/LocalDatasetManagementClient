@@ -18,10 +18,10 @@ namespace LDMApp.Services.Interfaces
         [Get("/{dataset_id}/sample={id}")]
         Task<ICollection<Image>> GetList(string dataset_id, int id);
 
-        [Get("/{dataset_id}/image={id}")]
+        [Get("/{dataset_id}/{id}")]
         Task<Image> Get(string dataset_id, string id);
 
-        [Get("/{dataset_id}/file/image={id}")]
+        [Get("/{dataset_id}/file/{id}")]
         Task<HttpContent> GetImage(string dataset_id, string id);
 
         [Post("/{dataset_id}")]
