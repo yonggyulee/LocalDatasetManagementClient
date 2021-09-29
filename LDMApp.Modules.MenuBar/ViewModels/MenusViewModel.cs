@@ -1,13 +1,9 @@
 ﻿using LDMApp.ApiHandler;
 using LDMApp.Core.Events;
-using LDMApp.Services.Interfaces;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 
 namespace LDMApp.Modules.MenuBar.ViewModels
@@ -27,9 +23,11 @@ namespace LDMApp.Modules.MenuBar.ViewModels
         public DelegateCommand ShowDatasetSelectDialogCMD { get; }
         public DelegateCommand ShowDatasetImportDIalogCMD { get; }
 
-        public MenusViewModel(IDatasetApi datasetApi, IDialogService dialogService, IEventAggregator eventAggregator)
+        public MenusViewModel(IDialogService dialogService, IEventAggregator eventAggregator //, IDatasetApi datasetApi
+            )
         {
-            datasetController = new DatasetApiHandler(datasetApi);
+            //datasetController = new DatasetApiHandler(datasetApi);
+            datasetController = new DatasetApiHandler();
             this.dialogService = dialogService;
             this.eventAggregator = eventAggregator;
             ShowDatasetSelectDialogCMD = new DelegateCommand(ShowDatasetSelectDialog);

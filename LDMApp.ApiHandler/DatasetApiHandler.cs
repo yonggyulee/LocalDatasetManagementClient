@@ -1,4 +1,6 @@
-﻿using LDMApp.Services.Interfaces;
+﻿using LDMApp.Core;
+using LDMApp.Services.Interfaces;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,6 +12,10 @@ namespace LDMApp.ApiHandler
     {
         private readonly IDatasetApi datasetApi;
 
+        public DatasetApiHandler()
+        {
+        }
+
         public DatasetApiHandler(IDatasetApi datasetApi)
         {
             this.datasetApi = datasetApi;
@@ -17,13 +23,19 @@ namespace LDMApp.ApiHandler
 
         public async Task<ICollection<string>> Get()
         {
-            return await datasetApi.Get();
+            return await CreateHttpClient().Get();
         }
 
         public async Task<string> Create(string id)
         {
-            return await datasetApi.Create(id);
+            var api = RestService.For<IDatasetApi>(ApiSettings.DatasetApiURL);
+
+            return await CreateHttpClient().Create(id);
         }
 
+        private IDatasetApi CreateHttpClient()
+        {
+            return RestService.For<IDatasetApi>(ApiSettings.DatasetApiURL);
+        }
     }
 }

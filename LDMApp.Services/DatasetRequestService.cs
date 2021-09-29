@@ -1,5 +1,6 @@
 ﻿using LDMApp.Core;
 using LDMApp.Services.Interfaces;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,16 +19,15 @@ namespace LDMApp.Services
             this.httpClientFactory = httpClientFactory;
         }
 
-        //public async Task<string> Get()
-        //{
-        //    using(var client = httpClientFactory.CreateClient(ApiSettings.DatasetsApiName))
-        //    {
-        //        //IDatasetApi dc = client;
-        //        //var Message = await client.GetAsync("/");
-        //        //using var Stream = await Message.Content.ReadAsStreamAsync();
-        //        //using var Reader = new StreamReader(Stream);
-        //        //return await Reader.ReadToEndAsync();
-        //    }
-        //}
+        public async Task<string> Get()
+        {
+            using (var client = httpClientFactory.CreateClient())
+            {
+                var Message = await client.GetAsync("/");
+                using var Stream = await Message.Content.ReadAsStreamAsync();
+                using var Reader = new StreamReader(Stream);
+                return await Reader.ReadToEndAsync();
+            }
+        }
     }
 }

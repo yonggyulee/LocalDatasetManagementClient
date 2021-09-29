@@ -1,17 +1,11 @@
 ﻿using LDMApp.ApiHandler;
 using LDMApp.Core.Events;
 using LDMApp.Core.Models;
-using LDMApp.Services.Interfaces;
-using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Windows.Media.Imaging;
 
 namespace LDMApp.Module.Images.ViewModels
@@ -37,9 +31,11 @@ namespace LDMApp.Module.Images.ViewModels
             set { SetProperty(ref _currentPositionImageItem, value); }
         }
 
-        public ImagesDataViewModel(IImagesApi imagesApi, IEventAggregator eventAggregator)
+        public ImagesDataViewModel(IEventAggregator eventAggregator //, IImagesApi imagesApi
+            )
         {
-            imagesController = new ImagesApiHandler(imagesApi);
+            //imagesController = new ImagesApiHandler(imagesApi);
+            imagesController = new ImagesApiHandler();
             this.eventAggregator = eventAggregator;
             eventAggregator.GetEvent<SampleSelectedEvent>().Subscribe(OnSampleSelected, ThreadOption.UIThread);
         }

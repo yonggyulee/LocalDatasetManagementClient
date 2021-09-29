@@ -1,8 +1,6 @@
 ﻿using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LDMApp.Dialogs
 {

@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.Json.Serialization;
 
 namespace LDMApp.Core.Models

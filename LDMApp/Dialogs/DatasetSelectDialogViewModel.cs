@@ -5,7 +5,6 @@ using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace LDMApp.Dialogs
 {

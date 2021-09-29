@@ -1,8 +1,5 @@
 ﻿using LDMApp.Core.Models;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LDMApp.Modules.Samples
 {

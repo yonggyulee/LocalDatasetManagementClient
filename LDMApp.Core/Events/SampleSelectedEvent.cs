@@ -1,8 +1,5 @@
-﻿using LDMApp.Core.Models;
-using Prism.Events;
-using System;
+﻿using Prism.Events;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LDMApp.Core.Events
 {

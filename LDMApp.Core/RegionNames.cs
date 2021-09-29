@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LDMApp.Core
+﻿namespace LDMApp.Core
 {
     public static class RegionNames
     {

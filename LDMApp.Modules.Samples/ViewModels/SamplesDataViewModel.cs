@@ -1,11 +1,9 @@
 ﻿using LDMApp.ApiHandler;
 using LDMApp.Core.Events;
 using LDMApp.Core.Models;
-using LDMApp.Services.Interfaces;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -35,12 +33,13 @@ namespace LDMApp.Modules.Samples.ViewModels
             set { SetProperty(ref _changedCommand, value); }
         }
 
-        public SamplesDataViewModel(ISamplesApi samplesApi, IEventAggregator eventAggregator)
+        public SamplesDataViewModel(IEventAggregator eventAggregator // , ISamplesApi samplesApi
+            )
         {
-            samplesController = new SamplesApiHandler(samplesApi);
+            //samplesController = new SamplesApiHandler(samplesApi);
+            samplesController = new SamplesApiHandler();
             this.eventAggregator = eventAggregator;
             eventAggregator.GetEvent<DatasetSelectedEvent>().Subscribe(setData, ThreadOption.UIThread);
-            //getMsg();
         }
 
         public Sample CurrentPositionSampleItem

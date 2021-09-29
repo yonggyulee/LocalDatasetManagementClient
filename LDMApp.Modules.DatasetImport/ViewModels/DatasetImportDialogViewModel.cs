@@ -1,9 +1,8 @@
 ﻿using LDMApp.ApiHandler;
 using LDMApp.Core;
 using LDMApp.Core.Models;
-using LDMApp.Services.Interfaces;
-using Microsoft.WindowsAPICodePack.Dialogs;
 using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
@@ -12,10 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
-using System.Windows;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LDMApp.Modules.DatasetImport.ViewModels
 {
@@ -89,12 +87,16 @@ namespace LDMApp.Modules.DatasetImport.ViewModels
         public DelegateCommand FindImageDirectoryCMD =>
             _findImageDirectoryCMD ?? (_findImageDirectoryCMD = new DelegateCommand(ExecuteFindImageDirectoryCMD));
 
-        public DatasetImportDialogViewModel(IDialogService dialogService, IDatasetApi datasetApi, ISamplesApi samplesApi, IImagesApi imagesApi)
+        public DatasetImportDialogViewModel(IDialogService dialogService //, IDatasetApi datasetApi, ISamplesApi samplesApi, IImagesApi imagesApi
+            )
         {
             this.dialogService = dialogService;
-            datasetController = new DatasetApiHandler(datasetApi);
-            samplesController = new SamplesApiHandler(samplesApi);
-            imagesController = new ImagesApiHandler(imagesApi);
+            //datasetController = new DatasetApiHandler(datasetApi);
+            //samplesController = new SamplesApiHandler(samplesApi);
+            //imagesController = new ImagesApiHandler(imagesApi);
+            datasetController = new DatasetApiHandler();
+            samplesController = new SamplesApiHandler();
+            imagesController = new ImagesApiHandler();
         }
 
         public bool CanCloseDialog()
